@@ -5,7 +5,7 @@ Docker images for local development
 To build an image run:
 
 ```
- docker build -t myimage --build-arg USER_ID=$(id -u) --build-arg GROUP_ID=$(id -g) php
+docker build -t myimage --build-arg USER_ID=$(id -u) --build-arg GROUP_ID=$(id -g) php
  ```
 
 
@@ -27,3 +27,6 @@ source: https://linuxhint.com/diff_apt_vs_aptget/
 Docker image building issues (resolved):
 
 1) https://github.com/docker-library/php/issues/61
+
+2) https://vsupalov.com/docker-shared-permissions/
+ 1) https://stackoverflow.com/questions/27701930/how-to-add-users-to-docker-container
