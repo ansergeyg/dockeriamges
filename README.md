@@ -8,6 +8,7 @@ To build an image run:
 docker build -t myimage --build-arg USER_ID=$(id -u) --build-arg GROUP_ID=$(id -g) php
  ```
 
+Note: build time arguments are mandatory. Otherwise image will not build.
 
 ---
 
