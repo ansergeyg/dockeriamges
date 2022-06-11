@@ -2,12 +2,12 @@ FROM php:7.4-apache
 
 # Install ssh to use git in the container
 
-RUN apt update
+RUN apt-get update
 RUN apt-get -y install openssh-server
 
 # Install git
 
-RUN apt install -y git
+RUN apt-get install -y git
 
 # Install Composer
 
@@ -37,4 +37,15 @@ ENV DOCUMENT_ROOT ${PWD}
 RUN sed -ri -e 's!/var/www/html!${DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
 RUN sed -ri -e 's!/var/www/!${DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
 
+
+# We resove container/host file permission issues by feeding the host user to container
+
+ARG USER_ID
+ARG GROUP_ID
+
+RUN addgroup --gid $GROUP_ID user
+
+RUN adduser --disabled-password --gecos '' --uid $USER_ID --gid $GROUP_ID user
+
+USER user
 

@@ -5,8 +5,10 @@ Docker images for local development
 To build an image run:
 
 ```
-docker build -t image_name_here:version_here php
-```
+ docker build -t myimage --build-arg USER_ID=$(id -u) --build-arg GROUP_ID=$(id -g) php
+ ```
+
+
 ---
 
 Should I Use apt or apt-get?
