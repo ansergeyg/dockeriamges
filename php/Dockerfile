@@ -5,15 +5,27 @@ FROM php:7.4-apache
 RUN apt update
 RUN apt-get -y install openssh-server
 
+# Install git
+
+RUN apt install -y git
+
 # Install Composer
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
+
+# Composer shows warnings that it cannot unzip packages. So we install zip/unzip
+
+RUN apt-get install -y \
+    zlib1g-dev \
+    libzip-dev \
+    unzip
+RUN docker-php-ext-install zip
+
 # By default docker image is looking at the /var/www/html folder
 # We need to chage it to our directory, so next time we log in to container shell
 # We will see our working directory from host
-
-#WORKDIR ${PWD}
+# You can replace it in the dockre-compose file with working_dir property
 
 # Document root variable expose 
 
