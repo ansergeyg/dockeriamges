@@ -19,3 +19,9 @@ If you script anything to do with package installation, use apt-get. That gives 
 
 
 source: https://linuxhint.com/diff_apt_vs_aptget/
+
+---
+
+Docker image building issues (resolved):
+
+1) https://github.com/docker-library/php/issues/61
