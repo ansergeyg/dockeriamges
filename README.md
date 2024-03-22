@@ -26,7 +26,7 @@ source: https://linuxhint.com/diff_apt_vs_aptget/
 ---
 
 Docker image building issues (resolved):
-
+0) Now you need to use sudo apt install docker-buildx
 1) https://github.com/docker-library/php/issues/61
 
 2) https://vsupalov.com/docker-shared-permissions/
