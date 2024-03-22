@@ -5,7 +5,13 @@ Docker images for local development
 To build an image run:
 
 ```
-docker build -t myimage --build-arg USER_ID=$(id -u) --build-arg GROUP_ID=$(id -g) php
+
+//Now you need to use buildx:
+
+sudo apt install docker-buildx
+
+docker buildx build -t myimage --build-arg USER_ID=$(id -u) --build-arg GROUP_ID=$(id -g) php
+
  ```
 
 Note: build time arguments are mandatory. Otherwise image will not build.
@@ -26,7 +32,6 @@ source: https://linuxhint.com/diff_apt_vs_aptget/
 ---
 
 Docker image building issues (resolved):
-0) Now you need to use sudo apt install docker-buildx
 1) https://github.com/docker-library/php/issues/61
 
 2) https://vsupalov.com/docker-shared-permissions/
