@@ -4,15 +4,18 @@ Docker images for local development
 
 To build an image run:
 
+Now you need to use buildx:
+
+```
+sudo apt install docker-buildx
 ```
 
-//Now you need to use buildx:
+and then:
 
-sudo apt install docker-buildx
-
+```
 docker buildx build -t myimage --build-arg USER_ID=$(id -u) --build-arg GROUP_ID=$(id -g) php
 
- ```
+```
 
 Note: build time arguments are mandatory. Otherwise image will not build.
 
