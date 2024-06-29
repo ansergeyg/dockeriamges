@@ -19,6 +19,12 @@ docker buildx build -t myimage --build-arg USER_ID=$(id -u) --build-arg GROUP_ID
 
 Note: build time arguments are mandatory. Otherwise image will not build.
 
+Alternative way to build (may not work):
+
+```
+docker build --file path_to/Dockerfile --tag myimage . 
+```
+
 ---
 
 Should I Use apt or apt-get?
