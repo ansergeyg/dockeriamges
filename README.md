@@ -10,10 +10,18 @@ Now you need to use buildx:
 sudo apt install docker-buildx
 ```
 
-and then:
+```
+# docker buildx build --tag tag_name path
+
+#Real example:
+
+docker buildx build --tag my_image:1.0 folder/Dockerfile
+```
+
+or if you need to pass arguments then:
 
 ```
-docker buildx build -t myimage --build-arg USER_ID=$(id -u) --build-arg GROUP_ID=$(id -g) php
+docker buildx build --tag myimage:1.0 --build-arg USER_ID=$(id -u) --build-arg GROUP_ID=$(id -g) folder/Dockerfile
 
 ```
 
